@@ -1,0 +1,49 @@
+using System;
+
+namespace inheritance
+{
+    class student
+    {
+        public string name;
+        public int rollno;
+        public string subject;
+        //public void getdetail()
+        //{
+        //    Console.WriteLine("name  : {o} age : {1} subject : {2}", name, rollno , subject);
+        //}
+        class teacher : student
+        {
+            public  string myName = "Shviam";
+            //public int salary;
+            //public int id;
+            //public string subject;
+            //public void getdetail()
+            //{
+            //    Console.WriteLine("name  : {o} age : {1} subject : {2}", name, age, subject);
+            //}
+        }
+        class Principal : teacher
+        {
+            public int salary;
+            public int id;
+            public string order;
+
+            public void getdetail()
+            {
+                Console.WriteLine();
+                Console.WriteLine("Name: {0} id: {1} order: {2} salary: {3} rollno {4}", name, id, order, salary, rollno);
+            }
+
+
+
+
+            static void Main(string[] args)
+            {
+                Principal obj = new Principal();
+                obj.rollno = 12324;
+                Console.WriteLine(obj.myName);
+                Console.WriteLine("Rollno is {0}",obj.rollno);
+            }
+        }
+
+    } }
