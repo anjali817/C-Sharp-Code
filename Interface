@@ -1,0 +1,35 @@
+using System;
+
+namespace ConsoleApp1
+{
+    interface  Animal
+    {
+        public void anjali();
+        
+    }
+    interface Dog
+    {
+        public void eat();
+   }
+
+    class Myclass : Animal, Dog
+    {
+        public void eat()
+        {
+            Console.WriteLine("Barking");
+        }
+        public void anjali()
+        {
+            Console.WriteLine("Barking... ");
+        }
+
+
+        static void Main(string[] vs)
+        {
+            Myclass obj = new Myclass();
+            obj.anjali();
+            obj.eat();
+            Console.ReadLine();
+        }
+    }
+}
