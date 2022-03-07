@@ -1,0 +1,97 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace abstract121
+{
+    abstract class atm
+    {
+        public abstract void getdetail();
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Class1 obj = new Class1();
+            obj.getdetail();
+            Console.ReadLine();
+        }
+    }
+}
+--------------------------------another class--------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace abstract121
+{
+    class Class1 : atm
+    {
+        public override void getdetail()
+        {
+            int balance = 10000;
+            int debit;
+            int credit;
+            int pin = 1234;
+            Console.WriteLine("enter the pin");
+             pin = int.Parse(Console.ReadLine());
+
+            if (pin == 1234)
+            {
+                Console.WriteLine("press 1 for debit\n press 2 for credit \n press 3 for balance enquiry ");
+                string inp = Console.ReadLine();
+                switch (inp)
+                {
+                    case "1":
+                        Console.WriteLine("enter the amount to debit");
+                       int a = int.Parse(Console.ReadLine());  
+
+                        if (a <= balance) 
+                        {
+                            Console.WriteLine("transection successsfull");
+                            
+                        }
+                        else
+                        {
+                            Console.WriteLine("insufficent balance to take this transection");
+                        }
+  
+                       
+                      
+                        break;
+                    case "2":
+                        Console.WriteLine("enter the amont to credit");
+                        int b = int.Parse(Console.ReadLine());
+                        if(b >= 0)
+                        {
+                            balance = balance + b;
+                            Console.WriteLine(" current balance in your accont : {0}",balance);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("balance");
+                        }
+                        
+                        break;
+                    case "3":
+                        Console.WriteLine(balance);
+                        break;
+                    default:
+                        Console.WriteLine("invalid key u press");
+                        break;
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("invalid pin");
+            }
+        }
+    }
+}
